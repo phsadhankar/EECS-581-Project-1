@@ -1,0 +1,1 @@
+# defining code to compile, build and run minesweeper game then clean

@@ -1,0 +1,1 @@
+// main function for Minesweeper, will connect with game, board, inputhandler and ui

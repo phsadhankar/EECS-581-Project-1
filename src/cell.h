@@ -1,0 +1,1 @@
+// declare cell class incl mines, covered, flagged, and adjecent-mine numbers
