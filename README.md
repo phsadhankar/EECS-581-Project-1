@@ -67,13 +67,13 @@ The objective of the game is to uncover all non-mine cells without detonating a 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Follow these steps to build and run Minesweeper locally.
+Follow these steps to run Minesweeper locally.
 
 ### Prerequisites
 
-- C++ compiler
+- Python 3
+- Tkinter
 - Git
-- Bash or compatible shell
 
 ### Installation
 
@@ -85,17 +85,9 @@ Follow these steps to build and run Minesweeper locally.
 
     - cd EECS-581-Project-1/src
 
-3. Build/install the program if necessary
+3. Run the program
 
-    - `[BUILD COMMAND]`
-
-4. Run the program
-
-    - `[RUN COMMAND]`
-  
-5. (Optional) Clean build files:
-
-    - `[CLEAN COMMAND]`
+    - python3 minesweeper.py
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,7 +122,7 @@ If the player uncovers a mine, the game ends and all mines are revealed. The gam
 <!-- ROADMAP -->
 
 ## Roadmap
-- [ ] Project Planning
+- [x] Project Planning
 - [ ] System Architecture Design
 - [ ] Implementation
 - [ ] Mine Placement and Board Generation
