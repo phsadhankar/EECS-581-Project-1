@@ -69,8 +69,14 @@ def click(x, y):
 def flag(x, y, e):
     if done or r[x][y]:
         return
+
+    # If the cell is unflagged and user has no flags left
+    if (not f[x][y]) and calculate_remaining_flags() == 0:
+        return
+    
     f[x][y] = not f[x][y]
     btns[x][y].config(text="🚩" if f[x][y] else "")
+    update_remaining_flags_label() # update the flag count label after a flag toggle
     return "break"
 
 
@@ -91,6 +97,34 @@ def reset():
     done = False
     first_move = True
 
+    update_remaining_flags_label()
+
+# Calculate the number of remaining flags the player has
+# (Total mines (M) - placed flags)
+def calculate_remaining_flags():
+    global M # Declare global M variable so we can access in this function
+
+    if done: # If game is over
+        return 0 # User cannot flag more cells
+
+    flagged_mines = 0 # Tracked flagged mines
+
+    for i in range(N): # Iterate through columns
+        for j in range(N): # Iterate through rows
+            if f[i][j]: # Check if mine at [i][j] in matrix is flagged
+                flagged_mines += 1 # If flagged, increment flagged mines tracker
+
+    remaining_flags = M - flagged_mines # Calculate remaining flags
+
+    return remaining_flags # Return the calculated remaining flags
+
+
+# Update the text label that shows user how many more flags they can place
+def update_remaining_flags_label():
+    remaining_flags = calculate_remaining_flags() # Get the number of remaining flags
+    
+    remaining_flags_label.config(text=f"Remaining flags: {remaining_flags}") # Update the label using f string
+
 
 btns = [[tk.Button(root, width=2, height=1, font=("Arial", 12)) for _ in range(N)] for _ in range(N)]
 for i in range(N):
@@ -102,6 +136,11 @@ for c in range(N):
     tk.Label(root, text=chr(65 + c), width=2).grid(row=0, column=c + 1)
 for r_index in range(N):
     tk.Label(root, text=str(r_index + 1), width=2).grid(row=r_index + 1, column=0)
-reset()
+
 tk.Button(root, text="Reset", command=reset).grid(row=N + 1, column=0, columnspan=N + 1, sticky="ew")
+
+remaining_flags_label = tk.Label(root, text=f"Remaining flags: {calculate_remaining_flags()}") # Create label to show remaining flag count
+remaining_flags_label.grid(row=N + 2, column = 0, columnspan = N + 2) # Set label position
+
+reset()
 root.mainloop()
