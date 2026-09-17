@@ -5,7 +5,8 @@ Time spent attending EECS 581 lectures is not included.
 
 ## Joshua Fakunmoju
 | Date | Activity | Hours |
-|:----:|:--------:|:-----:|
+| 09/08/2026 | Attended GTA team meeting and discussed project planning and group organization	| 0.50 |
+
 
 **TOTAL HOURS: 0.00**
 
