@@ -66,7 +66,9 @@ def reveal(x, y):
             for q in range(N):
                 if a[p][q] == -1:
                     btns[p][q].config(text="💥", bg="red")
+                    
         done = True
+        game_status.config(text="Status: Game Over: Loss")
         if tk.messagebox.askyesno("Minesweeper", "Boom! You lost. Play again?"):
             reset()
         else:
@@ -79,6 +81,7 @@ def reveal(x, y):
                 reveal(x + i, y + j)
     if sum(sum(r, [])) == N * N - M:
         done = True
+        game_status.config(text="Status: Victory")
         tk.messagebox.showinfo("Minesweeper", "You win!")
         root.destroy()
 
@@ -120,6 +123,7 @@ def reset():
             btns[i][j].config(text="", bg="LightGray", relief=tk.RAISED)
     done = False
     first_move = True
+    game_status.config(text="Status: Playing")
 
     update_remaining_flags_label()
 
@@ -149,6 +153,7 @@ def update_remaining_flags_label():
 
     remaining_flags_label.config(text=f"Remaining flags: {remaining_flags}") # Update the label using f string
 
+    mines_remaining_label.config(text=f"Remaining Mines: {remaining_flags}")
 
 btns = [[tk.Button(root, width=2, height=1, font=("Arial", 12)) for _ in range(N)] for _ in range(N)]
 for i in range(N):
@@ -165,6 +170,12 @@ tk.Button(root, text="Reset", command=reset).grid(row=N + 1, column=0, columnspa
 
 remaining_flags_label = tk.Label(root, text=f"Remaining flags: {calculate_remaining_flags()}") # Create label to show remaining flag count
 remaining_flags_label.grid(row=N + 2, column = 0, columnspan = N + 2) # Set label position
+
+mines_remaining_label = tk.Label(root, text=f"Remaining Mines: {calculate_remaining_flags()}")
+mines_remaining_label.grid(row=N + 3, column=0, columnspan=N + 2)
+
+game_status = tk.Label(root, text="Status: Playing")
+game_status.grid(row=N + 4, column=0, columnspan=N + 2)
 
 reset()
 root.mainloop()
