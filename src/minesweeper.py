@@ -147,7 +147,7 @@ tk.Button(root, text="Reset", command=reset).grid(row=N + 1, column=0, columnspa
 remaining_flags_label = tk.Label(root, text=f"Remaining flags: {calculate_remaining_flags()}") # Create label to show remaining flag count
 remaining_flags_label.grid(row=N + 2, column = 0, columnspan = N + 2) # Set label position
 
-mines_remaining_label = tk.Label(root, text=f"Mines remaining: {calculate_remaining_flags()}")
+mines_remaining_label = tk.Label(root, text=f"Remaining Mines: {calculate_remaining_flags()}")
 mines_remaining_label.grid(row=N + 3, column=0, columnspan=N + 2)
 
 game_status = tk.Label(root, text="Status: Playing")
