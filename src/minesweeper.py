@@ -10,7 +10,7 @@
 #  OUTPUT:          Displays the Minesweeper board, cell states, and game results through the
 #                   graphical user interface.
 #
-#  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales
+#  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales, Joshua Fakunmoju
 #  SOURCES:         TBD
 #
 #  AUTHOR:          Pruthviraj Sadhankar
