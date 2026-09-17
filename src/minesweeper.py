@@ -88,16 +88,18 @@ def click(x, y):
         reveal(x, y)
 
 
+# Function to handle right clicks (flag toggle attempts) on cells
 def flag(x, y, e):
+    # If game is over or cell is uncovered
     if done or r[x][y]:
         return
 
     # If the cell is unflagged and user has no flags left
-    if (not f[x][y]) and calculate_remaining_flags() == 0:
+    if ( (not f[x][y]) and calculate_remaining_flags() == 0):
         return
 
-    f[x][y] = not f[x][y]
-    btns[x][y].config(text="🚩" if f[x][y] else "")
+    f[x][y] = not f[x][y] # Toggle cell flag state
+    btns[x][y].config(text="🚩" if f[x][y] else "") # Toggle cell flag icon
     update_remaining_flags_label() # update the flag count label after a flag toggle
     return "break"
 
