@@ -3,11 +3,11 @@
 #  PROJECT:         Project 1 - Minesweeper
 #  FILE:            minesweeper.py
 #
-#  DESCRIPTION:     Implements the Minesweeper game, including board setup, gameplay logic, mine 
+#  DESCRIPTION:     Implements the Minesweeper game, including board setup, gameplay logic, mine
 #                   flagging, win/loss conditions, and the Tkinter graphical user interface.
 #
 #  INPUT:           Player mouse input for uncovering and flagging cells.
-#  OUTPUT:          Displays the Minesweeper board, cell states, and game results through the 
+#  OUTPUT:          Displays the Minesweeper board, cell states, and game results through the
 #                   graphical user interface.
 #
 #  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales
@@ -16,7 +16,7 @@
 #  AUTHOR:          Pruthviraj Sadhankar
 #  CREATION DATE:   09/13/2026
 #
-#  AUTHOR'S NOTE:   This file contains the initial minimum viable product (MVP) for the Minesweeper 
+#  AUTHOR'S NOTE:   This file contains the initial minimum viable product (MVP) for the Minesweeper
 #                   game and may be modified or refactored as development continues.
 #
 
@@ -95,7 +95,7 @@ def flag(x, y, e):
     # If the cell is unflagged and user has no flags left
     if (not f[x][y]) and calculate_remaining_flags() == 0:
         return
-    
+
     f[x][y] = not f[x][y]
     btns[x][y].config(text="🚩" if f[x][y] else "")
     update_remaining_flags_label() # update the flag count label after a flag toggle
@@ -115,7 +115,7 @@ def reset():
         for j in range(N):
             r[i][j] = f[i][j] = False
             a[i][j] = 0
-            btns[i][j].config(text="", bg="SystemButtonFace", relief=tk.RAISED)
+            btns[i][j].config(text="", bg="LightGray", relief=tk.RAISED)
     done = False
     first_move = True
 
@@ -144,7 +144,7 @@ def calculate_remaining_flags():
 # Update the text label that shows user how many more flags they can place
 def update_remaining_flags_label():
     remaining_flags = calculate_remaining_flags() # Get the number of remaining flags
-    
+
     remaining_flags_label.config(text=f"Remaining flags: {remaining_flags}") # Update the label using f string
 
 
