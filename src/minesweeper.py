@@ -1,3 +1,25 @@
+#
+#  SEMESTER:        EECS 581 Fall 2026
+#  PROJECT:         Project 1 - Minesweeper
+#  FILE:            minesweeper.py
+#
+#  DESCRIPTION:     Implements the Minesweeper game, including board setup, gameplay logic, mine 
+#                   flagging, win/loss conditions, and the Tkinter graphical user interface.
+#
+#  INPUT:           Player mouse input for uncovering and flagging cells.
+#  OUTPUT:          Displays the Minesweeper board, cell states, and game results through the 
+#                   graphical user interface.
+#
+#  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales
+#  SOURCES:         TBD
+#
+#  AUTHOR:          Pruthviraj Sadhankar
+#  CREATION DATE:   09/13/2026
+#
+#  AUTHOR'S NOTE:   This file contains the initial minimum viable product (MVP) for the Minesweeper 
+#                   game and may be modified or refactored as development continues.
+#
+
 import tkinter as tk, random
 from tkinter import simpledialog
 
