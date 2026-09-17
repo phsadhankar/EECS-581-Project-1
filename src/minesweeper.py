@@ -10,7 +10,7 @@
 #  OUTPUT:          Displays the Minesweeper board, cell states, and game results through the
 #                   graphical user interface.
 #
-#  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales, Joshua Fakunmoju
+#  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales, Joshua Fakunmoju, Carter Ruff
 #  SOURCES:         TBD
 #
 #  AUTHOR:          Pruthviraj Sadhankar
@@ -65,7 +65,14 @@ def reveal(x, y):
         for p in range(N):
             for q in range(N):
                 if a[p][q] == -1:
-                    btns[p][q].config(text="💥", bg="red")
+                    # If its the mine the user lost on
+                    if p == x and q == y:
+                        # Make the bg red and the mines black
+                        btns[p][q].config(text="💥", bg="red", fg="black")
+                    # Every other mine
+                    else:
+                        # Keep bg the same but make mines black
+                        btns[p][q].config(text="💥", bg="lightGray", fg="black")
                     
         done = True
         game_status.config(text="Status: Game Over: Loss")
@@ -79,16 +86,25 @@ def reveal(x, y):
         for i in (-1, 0, 1):
             for j in (-1, 0, 1):
                 reveal(x + i, y + j)
-    if sum(sum(r, [])) == N * N - M:
+
+
+def check_win():
+    global done
+
+    winCon = sum(sum(r, [])) == N * N - M
+    if not done and winCon:
         done = True
         game_status.config(text="Status: Victory")
         tk.messagebox.showinfo("Minesweeper", "You win!")
-        root.destroy()
-
+        root.destroy()  
 
 def click(x, y):
     if not done:
         reveal(x, y)
+        
+        if not done:
+            check_win()
+          
 
 
 # Function to handle right clicks (flag toggle attempts) on cells
@@ -102,7 +118,7 @@ def flag(x, y, e):
         return
 
     f[x][y] = not f[x][y] # Toggle cell flag state
-    btns[x][y].config(text="🚩" if f[x][y] else "") # Toggle cell flag icon
+    btns[x][y].config(text="🚩" if f[x][y] else "", fg="red") # Toggle cell flag icon
     update_remaining_flags_label() # update the flag count label after a flag toggle
     return "break"
 
@@ -110,7 +126,12 @@ def flag(x, y, e):
 def reset():
     global done, first_move, M
     while True:
-        mine_count = simpledialog.askinteger("Minesweeper", "Number of mines (10-20):", initialvalue=M, minvalue=10, maxvalue=20)
+        mine_count = simpledialog.askinteger("Minesweeper", "Number of mines (10-20):", initialvalue=M, minvalue=10, maxvalue=20, parent=root)
+
+        # Bring window back to front
+        root.lift()
+        root.focus_force()
+
         if mine_count is None:
             mine_count = M
         if 10 <= mine_count <= 20:
@@ -120,7 +141,7 @@ def reset():
         for j in range(N):
             r[i][j] = f[i][j] = False
             a[i][j] = 0
-            btns[i][j].config(text="", bg="LightGray", relief=tk.RAISED)
+            btns[i][j].config(text="", bg="LightGray", fg="black", relief=tk.RAISED)
     done = False
     first_move = True
     game_status.config(text="Status: Playing")
