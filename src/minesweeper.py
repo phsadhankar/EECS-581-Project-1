@@ -10,7 +10,7 @@
 #  OUTPUT:          Displays the Minesweeper board, cell states, and game results through the
 #                   graphical user interface.
 #
-#  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales, Joshua Fakunmoju, Carter Ruff
+#  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales, Joshua Fakunmoju, Carter Ruff, Gabriel Haro-Villa
 #  SOURCES:         TBD
 #
 #  AUTHOR:          Pruthviraj Sadhankar
@@ -75,7 +75,7 @@ def reveal(x, y):
                         btns[p][q].config(text="💥", bg="lightGray", fg="black")
                     
         done = True
-        game_status.config(text="Status: Game Over: Loss")
+        game_status.config(text="Status: Game Over: Loss") # Sets the game status to 'Loss' when the player uncovers a mine
         if tk.messagebox.askyesno("Minesweeper", "Boom! You lost. Play again?"):
             reset()
         else:
@@ -94,7 +94,7 @@ def check_win():
     winCon = sum(sum(r, [])) == N * N - M
     if not done and winCon:
         done = True
-        game_status.config(text="Status: Victory")
+        game_status.config(text="Status: Victory") # Sets the game status to 'Victory' when the player wins
         tk.messagebox.showinfo("Minesweeper", "You win!")
         root.destroy()  
 
@@ -144,7 +144,7 @@ def reset():
             btns[i][j].config(text="", bg="LightGray", fg="black", relief=tk.RAISED)
     done = False
     first_move = True
-    game_status.config(text="Status: Playing")
+    game_status.config(text="Status: Playing") # Sets the current status to 'Playing' when user is playing
 
     update_remaining_flags_label()
 
@@ -174,7 +174,7 @@ def update_remaining_flags_label():
 
     remaining_flags_label.config(text=f"Remaining flags: {remaining_flags}") # Update the label using f string
 
-    mines_remaining_label.config(text=f"Remaining Mines: {remaining_flags}")
+    mines_remaining_label.config(text=f"Mines: {M}") # Sets the number of mines next to its label for the current game
 
 btns = [[tk.Button(root, width=2, height=1, font=("Arial", 12)) for _ in range(N)] for _ in range(N)]
 for i in range(N):
@@ -192,11 +192,11 @@ tk.Button(root, text="Reset", command=reset).grid(row=N + 1, column=0, columnspa
 remaining_flags_label = tk.Label(root, text=f"Remaining flags: {calculate_remaining_flags()}") # Create label to show remaining flag count
 remaining_flags_label.grid(row=N + 2, column = 0, columnspan = N + 2) # Set label position
 
-mines_remaining_label = tk.Label(root, text=f"Remaining Mines: {calculate_remaining_flags()}")
-mines_remaining_label.grid(row=N + 3, column=0, columnspan=N + 2)
+mines_remaining_label = tk.Label(root, text=f"Mines: {M}") # created a label "Mines:" on the UI to show the mine count
+mines_remaining_label.grid(row=N + 3, column=0, columnspan=N + 2) # sets the label position
 
-game_status = tk.Label(root, text="Status: Playing")
-game_status.grid(row=N + 4, column=0, columnspan=N + 2)
+game_status = tk.Label(root, text="Status: Playing") # created a label for the game status
+game_status.grid(row=N + 4, column=0, columnspan=N + 2) # sets the label position
 
 reset()
 root.mainloop()
