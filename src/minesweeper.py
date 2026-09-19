@@ -23,11 +23,12 @@
 import tkinter as tk, random
 from tkinter import simpledialog
 
+# This creates a window for the game using the Tkinter module
 root = tk.Tk()
-root.title("Minesweeper")
+root.title("Minesweeper")    # This helps title the window 'Minesweeper'
 
-N = 10
-M = 15
+N = 10                        # Defines the dimension of the grid
+M = 15                        # Defines a default amount of hidden mines
 
 a = [[0] * N for _ in range(N)]
 r = [[False] * N for _ in range(N)]
