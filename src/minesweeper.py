@@ -119,7 +119,7 @@ def flag(x, y, e):
         return
 
     f[x][y] = not f[x][y] # Toggle cell flag state
-    btns[x][y].config(text="🚩" if f[x][y] else "", fg="red") # Toggle cell flag icon
+    btns[x][y].config(text="⚑" if f[x][y] else "", fg="red") # Toggle cell flag icon
     update_remaining_flags_label() # update the flag count label after a flag toggle
     return "break"
 
