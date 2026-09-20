@@ -55,9 +55,9 @@ Time spent attending EECS 581 lectures is not included.
 |:----:|:--------:|:-----:|
 | 09/08/2026 | Attended GTA team meeting and discussed project planning and group organization | 0.50 |
 | 09/13/2026 | Attended virtual team meeting and discussed project requirements and task assignments | 0.75 |
-| 09/13/2026 | Developed the initial Minesweeper MVP, including the game board, mine generation, cell revealing, flagging, win/loss functionality, and Tkinter interface | -- |
+| 09/13/2026 | Developed the initial Minesweeper MVP, including the game board, mine generation, cell revealing, flagging, win/loss functionality, and Tkinter interface | 1.50 |
 
-**TOTAL HOURS: --**
+**TOTAL HOURS: 2.75**
 
 ## Gael Salazar-Morales
 | Date | Activity | Hours |
