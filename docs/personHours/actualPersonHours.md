@@ -60,8 +60,11 @@ Time spent attending EECS 581 lectures is not included.
 | Date | Activity | Hours |
 |:----:|:--------:|:-----:|
 | 09/08/2026 | Attended GTA team meeting and discussed project planning and group organization | 0.50 |
+| 09/15/2026 | Developed the initial game configuration settings, submitted issue  | 1.00 |
+| 09/17/2026 | Attended GTA team meeting and discussed project planning and group organization  | 0.50 |
+| 09/19/2026 | Submitted issue and closed issue | 0.50 |
 
-**TOTAL HOURS: 0.50**
+**TOTAL HOURS: 2.00**
 
 ## Total Team Person-Hours
 
