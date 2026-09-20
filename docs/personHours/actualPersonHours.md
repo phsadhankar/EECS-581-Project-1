@@ -18,7 +18,9 @@ Time spent attending EECS 581 lectures is not included.
 | 09/08/2026 | Attended GTA team meeting and discussed project planning and group organization | 0.50 |
 | 09/13/2026 | Attended virtual team meeting and discussed project requirements and task assignments | 0.75 |
 | 09/16/2026 | Worked on player interface | 1.00 |
-**TOTAL HOURS: 2.25**
+| 09/17/2026 | Attended GTA team meeting and discussed project progress | 0.50 |
+
+**TOTAL HOURS: 2.75**
 
 ## Liam Kinghouser
 | Date | Activity | Hours |
