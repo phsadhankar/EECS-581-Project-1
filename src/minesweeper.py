@@ -37,17 +37,27 @@ done = False
 first_move = True
 
 
+# A function that randomly places mines and also ensuring the first click is safe
 def place_mines(exclude_x, exclude_y):
     global a
+    
+    # This creates a set of safe coordinates starting with the clicked cell
     safe = {(exclude_x, exclude_y)}
+    
+    # This stores and keeps track of adjacent cells in a 3x3 grid
     for i in range(max(0, exclude_x - 1), min(N, exclude_x + 2)):
         for j in range(max(0, exclude_y - 1), min(N, exclude_y + 2)):
             safe.add((i, j))
+
+    # This line resets the matrix cells to 0
     for i in range(N):
         for j in range(N):
             a[i][j] = 0
+            
+    # This loop helps randomly place mines in unsafe positions
     for mine in random.sample([(i, j) for i in range(N) for j in range(N) if (i, j) not in safe], M):
         a[mine[0]][mine[1]] = -1
+
     for i in range(N):
         for j in range(N):
             if a[i][j] != -1:
@@ -92,15 +102,16 @@ def reveal(x, y):
 def check_win():
     global done
 
+    # This checks if all non-mine have been uncovered
     winCon = sum(sum(r, [])) == N * N - M
     if not done and winCon:
         done = True
         game_status.config(text="Status: Victory") # Sets the game status to 'Victory' when the player wins
         tk.messagebox.showinfo("Minesweeper", "You win!")
-        root.destroy()  
+        root.destroy()  # closes the game window
 
 def click(x, y):
-    if not done:
+    if not done:                    
         reveal(x, y)
         
         if not done:
