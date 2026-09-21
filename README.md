@@ -21,9 +21,6 @@
       <a href="#about-the-project">About The Project</a>
     </li>
     <li>
-      <a href="#meet-the-team">Meet the Team</a>
-    </li>
-    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
@@ -34,7 +31,6 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#repository-structure">Repository Structure</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contacts">Contacts</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -46,22 +42,6 @@ This project is developed as part of EECS 581 – Software Engineering II and fo
 
 The objective of the game is to uncover all non-mine cells without detonating a mine. The project emphasizes modular system design, implementation, testing, documentation, and extensibility for future development.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MEET THE TEAM -->
-
-## Meet the Team
-
-|  Team Member  |         Role         |                                           Responsibilities                                           |  Availability  | Programming Experience | Computing Platform Experience |
-| :-----------: | :------------------: | :--------------------------------------------------------------------------------------------------: | :------------: | :--------------------: | :---------------------------: |
-| [Team Member] |    Project Leader    |   Coordinates team meetings, tracks project progress, and ensures project milestones are completed   | [Availability] |      [Experience]      |     [Platform Experience]     |
-| [Team Member] |   Technical Leader   |            Provides technical direction and assists with implementation and system design            | [Availability] |      [Experience]      |     [Platform Experience]     |
-| [Team Member] |    GitHub Manager    |        Manages the repository, maintains organization, and handles merges and version history        | [Availability] |      [Experience]      |     [Platform Experience]     |
-| [Team Member] | Documentation Leader |           Maintains project documentation and ensures documentation is clear and consistent          | [Availability] |      [Experience]      |     [Platform Experience]     |
-| [Team Member] |   QA Testing Leader  |          Develops test cases, performs testing, and ensures identified defects are resolved          | [Availability] |      [Experience]      |     [Platform Experience]     |
-| [Team Member] |  Integration Leader  | Ensures code from different team members integrates properly and the complete program runs correctly | [Availability] |      [Experience]      |     [Platform Experience]     |
-| [Team Member] |     UX/UI Leader     |    Leads the design and implementation of the game interface to make sure the game is easy to use    | [Availability] |      [Experience]      |     [Platform Experience]     |
- 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -123,16 +103,16 @@ If the player uncovers a mine, the game ends and all mines are revealed. The gam
 
 ## Roadmap
 - [x] Project Planning
-- [ ] System Architecture Design
-- [ ] Implementation
-- [ ] Mine Placement and Board Generation
-- [ ] Cell Uncovering and Flagging
-- [ ] Win/Loss Detection
-- [ ] User Interface
-- [ ] Test Cases
-- [ ] System Documentation
-- [ ] Final Testing
-- [ ] Final Demonstration
+- [x] System Architecture Design
+- [x] Implementation
+- [x] Mine Placement and Board Generation
+- [x] Cell Uncovering and Flagging
+- [x] Win/Loss Detection
+- [x] User Interface
+- [x] Test Cases
+- [x] System Documentation
+- [x] Final Testing
+- [x] Final Demonstration
 
 See the [open issues](docs/knownIssues.md) for a full list of proposed features (and known issues).
 
@@ -151,21 +131,6 @@ See the [open issues](docs/knownIssues.md) for a full list of proposed features 
 ## License
 
 This project is developed for academic purposes as part of EECS 581 – Software Engineering II at the University of Kansas.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-## Contacts
-
-[Team Member] - [KU Email]<br />
-[Team Member] - [KU Email]<br />
-[Team Member] - [KU Email]<br />
-[Team Member] - [KU Email]<br />
-[Team Member] - [KU Email]<br />
-[Team Member] - [KU Email]<br />
-[Team Member] - [KU Email]<br />
-
-Project Link: [EECS 581 Group20 Project 1 – Minesweeper]([GITHUB-REPOSITORY-URL])
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

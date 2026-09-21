@@ -11,13 +11,10 @@
 #                   graphical user interface.
 #
 #  COLLABORATORS:   Liam Kinghouser, Gael Salazar-Morales, Joshua Fakunmoju, Carter Ruff, Gabriel Haro-Villa
-#  SOURCES:         TBD
+#  SOURCES:         GitHub Copilot 1.0.85 (Used in place_mines() as well as general guidance)
 #
 #  AUTHOR:          Pruthviraj Sadhankar
 #  CREATION DATE:   09/13/2026
-#
-#  AUTHOR'S NOTE:   This file contains the initial minimum viable product (MVP) for the Minesweeper
-#                   game and may be modified or refactored as development continues.
 #
 
 import tkinter as tk, random
@@ -36,7 +33,7 @@ f = [[False] * N for _ in range(N)]
 done = False
 first_move = True
 
-
+# Prompted GitHub Copilot for initial mine placement function (no changes required)
 # A function that randomly places mines and also ensuring the first click is safe
 def place_mines(exclude_x, exclude_y):
     global a
@@ -92,7 +89,7 @@ def reveal(x, y):
         else:
             root.destroy()
         return
-    btns[x][y].config(relief=tk.SUNKEN, text=str(a[x][y] or ""), bg="lightgray", fg=["blue", "green", "red", "navy", "brown", "teal", "black", "gray"][a[x][y]])
+    btns[x][y].config(relief=tk.SUNKEN, text=str(a[x][y] or ""), bg="lightgray", fg=["blue", "green", "red", "navy", "brown", "teal", "black", "gray", "darkgray"][a[x][y]])
     if a[x][y] == 0:
         for i in (-1, 0, 1):
             for j in (-1, 0, 1):
@@ -186,7 +183,7 @@ def update_remaining_flags_label():
 
     remaining_flags_label.config(text=f"Remaining flags: {remaining_flags}") # Update the label using f string
 
-    mines_remaining_label.config(text=f"Mines: {M}") # Sets the number of mines next to its label for the current game
+    mines_remaining_label.config(text=f"Remaining mines: {remaining_flags}") # Sets the number of mines next to its label for the current game
 
 btns = [[tk.Button(root, width=2, height=1, font=("Arial", 12)) for _ in range(N)] for _ in range(N)]
 for i in range(N):

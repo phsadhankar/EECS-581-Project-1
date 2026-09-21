@@ -2,8 +2,10 @@
 
 This page documents current limitations and minor issues in the Minesweeper project.
 
-- N/A
+- No known functional issues at this time.
 
 # Future Improvements / Proposed Features
 
-- N/A
+- Refactor the current single-file implementation into separate modules or classes for board management, game logic, input handling, and the user interface.
+
+- Add additional game configuration options, such as multiple board sizes or predefined difficulty levels.
